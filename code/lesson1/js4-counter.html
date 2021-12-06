@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="counterBox">0</div>
+    <button id="countUpButton">COUNT UP!!!!!</button>
+    <button id="countDownButton">COUNT DOWN!!!!!</button>
+
+    <script>
+        function countUp() {
+            // counter = counter + 1;
+            // counter += 1;
+            counter ++;
+            counterBox.innerHTML = counter;
+        }
+
+        function countDown() {
+            counter --;
+            counterBox.innerHTML = counter;
+        }
+
+        const counterBox = document.getElementById("counterBox");
+        const countUpButton = document.getElementById("countUpButton");
+        const countDownButton = document.getElementById("countDownButton");
+
+        let counter = 0;
+
+        countUpButton.addEventListener("click", countUp);
+        countDownButton.addEventListener("click", countDown);
+
+    </script>
+</body>
+</html>

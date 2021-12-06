@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="counterBox">0</div>
+    <button id="countUpButton">COUNT UP!!!!!</button>
+    <button id="countDownButton">COUNT DOWN!!!!!</button>
+
+    <script>
+        function countUp() {
+            counter ++;
+            if (counter > 5) {
+                counter = 0;
+            }
+        }
+
+        function countDown() {
+            counter --;
+            if (counter < 0) {
+                counter = 5;
+            }
+            counterBox.innerHTML = counter;
+        }
+
+        const counterBox = document.getElementById("counterBox");
+        const countUpButton = document.getElementById("countUpButton");
+        const countDownButton = document.getElementById("countDownButton");
+
+        let counter = 0;
+
+        countUpButton.addEventListener("click", countUp);
+        countDownButton.addEventListener("click", countDown);
+
+
+        // EXERCISE 1:
+        // COUNTER UP TO 5, AFTER 5 IF USER CLICKS UP, GOES BACK TO 0
+
+        // EXERCISE 2:
+        // COUNTER DOWN TO 0, AFTER 0 IF USER CLICKS DOWN, GOES TO 5
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rgbBox {
+            width: 200px;
+            height: 200px;
+            /* background-color: red; */
+        }
+    </style>
+</head>
+<body>
+    <div id="rgbBox"></div>
+    <button id="changeColorButton">Change Color</button>
+
+    <script>
+        // EXERCISE
+        // When clicking the Button the background of the box changes from
+        // Red -> Green -> Blue -> Red ...
+
+        function changeColor() {
+            
+            if (rgbBox.style.backgroundColor == "red") {
+                rgbBox.style.backgroundColor = "green";
+            } else if (rgbBox.style.backgroundColor == "green") {
+                rgbBox.style.backgroundColor = "blue";
+            } else if (rgbBox.style.backgroundColor == "blue") {
+                rgbBox.style.backgroundColor = "red";
+            }
+        }
+
+        const rgbBox = document.getElementById("rgbBox");
+        const changeColorButton = document.getElementById("changeColorButton");
+
+        changeColorButton.addEventListener("click", changeColor);
+
+        rgbBox.style.backgroundColor = "red";
+    </script>
+</body>
+</html>
