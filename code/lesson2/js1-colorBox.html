@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #counterBox {
+            width: 200px;
+            height: 200px;
+            border: solid 2px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="counterBox">0</div>
+    <button id="countUpButton">COUNT UP!!!!!</button>
+    <button id="countDownButton">COUNT DOWN!!!!!</button>
+
+    <script>
+        function countUp() {
+            counter ++;
+            if (counter >= colors.length) {
+                counter = 0;
+            }
+            updateUI();
+        }
+
+        function countDown() {
+            counter --;
+            if (counter < 0) {
+                counter = colors.length - 1;
+            }
+            updateUI();
+        }
+
+        function updateUI() {
+            counterBox.innerHTML = counter;
+            counterBox.style.backgroundColor = colors[counter];
+        }
+
+        const counterBox = document.getElementById("counterBox");
+        const countUpButton = document.getElementById("countUpButton");
+        const countDownButton = document.getElementById("countDownButton");
+
+        countUpButton.addEventListener("click", countUp);
+        countDownButton.addEventListener("click", countDown);
+
+        const colors = ["#23F2A3", "green", "pink", "blue", "magenta"];
+        let counter = 0;
+        updateUI();
+
+        // EXERCISE:
+        // 1 - Make it work in both directions with Background Color
+        // 2 - Make sure the first color in the array, is there when the page loads
+
+    </script>
+</body>
+</html>

@@ -9,7 +9,7 @@
         #rgbBox {
             width: 200px;
             height: 200px;
-            /* background-color: red; */
+            background-color: red;
         }
     </style>
 </head>
@@ -24,6 +24,8 @@
 
         function changeColor() {
             
+            console.log(rgbBox.style.backgroundColor);
+
             if (rgbBox.style.backgroundColor == "red") {
                 rgbBox.style.backgroundColor = "green";
             } else if (rgbBox.style.backgroundColor == "green") {
