@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #galleryFrame {
+            border: solid 5px red;
+            width: 200px;
+            height: 200px;
+
+            overflow: visible;
+        }
+
+        #imageWrapper {
+            width: 1600px;
+            height: 200px;
+
+            margin-left: 0px;
+        }
+
+        #imageWrapper > img {
+            display: block;
+            float: left;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="galleryFrame">
+        <div id="imageWrapper">
+            <img src="images/1.jpg">
+            <img src="images/2.jpg">
+            <img src="images/3.jpg">
+            <img src="images/4.jpg">
+            <img src="images/5.jpg">
+            <img src="images/6.jpg">
+            <img src="images/7.jpg">
+            <img src="images/8.jpg">
+        </div>
+    </div>
+
+    <script>
+        // EXERCISE + HOMEWORK
+        // add a previous and next button
+        // next button goes to the next image with animation
+        // suggestion: change the marginLeft of the imageWrapper in increments of 200px
+
+
+    </script>
+
+
+</body>
+</html>
