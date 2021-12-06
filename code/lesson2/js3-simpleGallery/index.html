@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #imageFrame {
+            display: block;
+            border: solid 2px black;
+        }
+    </style>
+</head>
+<body>
+    <img id="imageFrame" src="images/1.jpg">
+    <button id="prevButton">Previous</button>
+    <button id="nextButton">Next</button>
+
+    <script>
+
+        function gotoPrevImage() {
+            alert("PPPPREVIEWOUS!!!");
+        }
+
+        function gotoNextImage() {
+            alert("NEXT NEXT NEXT!!!");
+        }
+
+        const imageFrame = document.getElementById("imageFrame");
+        const prevButton = document.getElementById("prevButton");
+        const nextButton = document.getElementById("nextButton");
+
+        prevButton.addEventListener("click", gotoPrevImage);
+        nextButton.addEventListener("click", gotoNextImage);
+
+
+        // EXERCISE
+        // Create an Array of images
+        // jump to the next image on NEXT by changing the imageFrame source
+        // jump to the prev image on PREVIOUS
+    </script>
+</body>
+</html>
