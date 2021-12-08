@@ -16,6 +16,14 @@
     <button id="newButton">Add New Button</button>
 
     <script>
+        const buttonContainer = document.querySelector("#buttonContainer");
+        const newButton = document.querySelector("#newButton");
+
+        newButton.addEventListener("click", function() {
+            buttonContainer.innerHTML += "<button>Custom</button> ";
+        });
+
+
         // EXERCISE
         // 1 - When the user clicked the Add New Button button,
         // a new button should be created in the Container with the name `Custom`
