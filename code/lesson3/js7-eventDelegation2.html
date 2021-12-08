@@ -22,8 +22,13 @@
         <button>G</button>
     </div>
 
+    <p id="lastElementText">You haven't clicked any buttons yet...</p>
+    <p id="allElementsText">Buttons you clicked so far: </p>
+
     <script>
         const buttonContainer = document.querySelector("#buttonContainer");
+        const lastElementText = document.querySelector("#lastElementText");
+        const allElementsText = document.querySelector("#allElementsText");
 
         buttonContainer.addEventListener("click", function(event) {
             
@@ -32,8 +37,12 @@
                 return;
             }
 
-            alert(event.target.innerHTML);
+            const letter = event.target.innerHTML;
+
+            // alert(letter);
             event.target.style.backgroundColor = "green";
+            lastElementText.innerHTML = `The last button you clicked has the letter ${letter}`;
+            allElementsText.innerHTML += ` ${letter} `;
         });
 
 
