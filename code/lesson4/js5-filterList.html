@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="filterBox">
+        <option value="all">ALL</option>
+        <option value="over18">18 and Over</option>
+        <option value="under18">Under 18</option>
+    </select>
+
+    <ul id="peopleList"></ul>
+
+    <script>
+
+        const people = [
+            {
+                name: "Homer",
+                age: 40
+            },
+            {
+                name: "Marge",
+                age: 40
+            },
+            {
+                name: "Bart",
+                age: 10
+            },
+            {
+                name: "Lisa",
+                age: 9
+            },
+            {
+                name: "Maggie",
+                age: 2
+            }
+        ];
+
+        const peopleList = document.querySelector("#peopleList");
+        const filterBox = document.querySelector("#filterBox");
+
+        function fillList(people) {
+
+            peopleList.innerHTML = "";
+            
+            // for (let i = 0; i < people.length; i++) {
+            //     const newLi = `<li>${people[i].name}</li>`;
+            //     peopleList.innerHTML += newLi;
+            // }
+
+            people.forEach(function(element) {
+                const newLi = `<li>${element.name}</li>`;
+                peopleList.innerHTML += newLi;
+            });
+        }
+
+        filterBox.addEventListener("change", function() {
+            if (filterBox.value === "all") {
+            
+                fillList(people);
+            
+            } else if (filterBox.value === "over18") {
+                
+                const filtered = people.filter(function(element) {
+                    return element.age >= 18;
+                });
+                
+                fillList(filtered);
+            
+            } else if (filterBox.value === "under18") {
+                
+                const filtered = people.filter(function(element) {
+                    return element.age < 18;
+                });
+                
+                fillList(filtered);
+            }
+        });
+
+        fillList(people);
+
+        // HOMEWORK
+        // 1 - Make sure you understand what just happened...
+        // 2 - Research the sort array Method (w3schools.com)
+        // 3 - Add another SelectBox to Sort by Age or Alphabetically
+
+    </script>
+
+</body>
+</html>

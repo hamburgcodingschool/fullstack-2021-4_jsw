@@ -21,7 +21,35 @@
 
     <button id="calcButton">Calculate</button>
     <script>
-        // MAKE THIS AWESOME CALCULATOR WORK...
+        const number1 = document.querySelector("#number1");
+        const number2 = document.querySelector("#number2");
+        const result = document.querySelector("#result");
+        const operation = document.querySelector("#operation");
+        const calcButton = document.querySelector("#calcButton");
+
+        calcButton.addEventListener("click", function() {
+            let calc;
+
+            if (operation.value === "sum") {
+                calc = Number(number1.value) + Number(number2.value);
+            } else if (operation.value === "sub") {
+                calc = number1.value - number2.value;
+            } else if (operation.value === "mult") {
+                calc = number1.value * number2.value;
+            } else if (operation.value === "divi") {
+                calc = number1.value / number2.value;
+            } else if (operation.value === "mod") {
+                calc = number1.value % number2.value;
+            } else {
+                alert("Invalid Operation!");
+                return;
+            }
+
+            result.value = calc;
+        });
+
+
+
     </script>
 </body>
 </html>

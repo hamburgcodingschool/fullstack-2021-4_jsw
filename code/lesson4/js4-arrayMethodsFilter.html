@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const names = ["Joe", "Bob", "Martha", "Homer", "Marge", "Bart"];
+
+        const filteredNames = names.filter(function(element) {
+            // for (let i = 0; i < element.length; i++) {
+            //     if (element[i] == 'e') {
+            //         return true;
+            //     }
+            // }
+            // return false;
+            
+            return element.includes("a") || element.includes("A");
+        });
+
+        console.log(names);
+        console.log(filteredNames);
+
+        // Exercise
+        // Filter the array
+        // only values that contain an `A` or `a` somewhere pass the test
+
+    </script>
+</body>
+</html>

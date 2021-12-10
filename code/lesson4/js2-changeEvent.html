@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <select id="selectBox">
+        <option value="white"></option>
+        <option value="red">😡</option>
+        <option value="green">🤑</option>
+        <option value="blue">🥶</option>
+        <option value="yellow">😁</option>
+    </select>
+
+    <div id="colorBox"></div>
+
+    <script>
+        const selectBox = document.querySelector("#selectBox");
+        const colorBox = document.querySelector("#colorBox");
+       
+        selectBox.addEventListener("change", function() {
+
+            colorBox.style.backgroundColor = selectBox.value;
+        });
+
+        // EXERCISE
+        // Create a selectBox of colors
+        // Create a Div and on selectBox change,
+        // change the background color of the Div to the respective selectBox color
+
+    </script>
+</body>
+</html>
