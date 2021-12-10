@@ -16,13 +16,45 @@
     <button id="newButton">Add New Button</button>
 
     <script>
+        
         const buttonContainer = document.querySelector("#buttonContainer");
         const newButton = document.querySelector("#newButton");
 
+        // newButton.addEventListener("click", function() {
+        //     // figure out the last Element
+        //     const buttons = document.querySelectorAll("#buttonContainer > button");
+            
+        //     let nextNumber = 1;
+        //     if (buttons.length !== 0) {
+        //         const lastText = buttons[buttons.length - 1].innerHTML;
+        //         nextNumber = Number(lastText) + 1;
+        //     }
+        //     buttonContainer.innerHTML += ` <button>${nextNumber}</button> `;
+        // });
+
         newButton.addEventListener("click", function() {
-            buttonContainer.innerHTML += "<button>Custom</button> ";
+
+            const lastButton = buttonContainer.lastElementChild;
+            
+            let nextNumber = 1;
+            if (lastButton) {
+                nextNumber = Number(lastButton.innerHTML) + 1;
+            }
+
+            buttonContainer.innerHTML += ` <button>${nextNumber}</button> `;
         });
 
+        buttonContainer.addEventListener("click", function(event) {
+            if (event.target.tagName !== "BUTTON") {
+                return;
+            }
+            // event.target.style.backgroundColor = "red";
+            // event.target.style.opacity = 0;
+            // event.target.style.display = "none";
+            
+            // event.target.remove();
+            buttonContainer.removeChild(event.target);
+        });
 
         // EXERCISE
         // 1 - When the user clicked the Add New Button button,
@@ -33,7 +65,6 @@
         
         // 3 - The name of the new button should be the number of the last button + 1
         // instead of `Custom` (if no buttons are present, it should be 1)
-
     </script>
 </body>
 </html>
