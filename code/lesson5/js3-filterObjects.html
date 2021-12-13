@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const people = [
+            {
+                name: "Joe",
+                age: 20,
+                city: "NY"
+            },
+            {
+                name: "Martha",
+                age: 25,
+                city: "Boston"
+            },
+            {
+                name: "Lillith",
+                age: 30,
+                city: "NY"
+            },
+        ];
+        
+        // const peopleFromNY = [];
+
+        // for (let i = 0; i < people.length; i++) {
+
+        //     if (people[i].city === "NY") {
+        //         peopleFromNY.push(people[i]);
+        //     }
+        // }
+
+        // const peopleFromNY = people.filter(function(element) {
+        //     if (element.city === "NY") {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // });
+
+        const peopleFromNY = people.filter(function(element) {
+            return element.city === "NY";
+        });
+
+        console.log(people);
+        console.log(peopleFromNY);
+    </script>
+
+
+
+</body>
+</html>

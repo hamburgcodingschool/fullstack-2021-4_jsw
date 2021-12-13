@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const people = [
+            {
+                name: "Homer",
+                age: 40
+            },
+            {
+                name: "Marge",
+                age: 40
+            },
+            {
+                name: "Bart",
+                age: 10
+            },
+            {
+                name: "Lisa",
+                age: 9
+            },
+            {
+                name: "Maggie",
+                age: 2
+            }
+        ];
+
+        // Let's copy the array first so the original stays unachanged
+        // Unline `filter`, `sort` makes changes to the original array
+        const sortedPeople = [...people];
+
+        sortedPeople.sort(function(a, b) {
+            return a.age - b.age;
+        });
+
+        console.log(people);
+        console.log(sortedPeople);
+
+    </script>
+</body>
+</html>

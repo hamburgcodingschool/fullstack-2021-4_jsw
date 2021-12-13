@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ages = [23, 12, 12, 4, 5, 2, 12];
+
+        // const youngAges = [];
+        
+        // for (let i = 0; i < ages.length; i++) {
+        //     if (ages[i] < 10) {
+        //         youngAges.push(ages[i]);
+        //     }
+        // }
+        
+        const youngAges = ages.filter(function(element, index) {
+            if (element < 10) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        console.log(ages);
+        console.log(youngAges);
+    </script>
+</body>
+</html>
