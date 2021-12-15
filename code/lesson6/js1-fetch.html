@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // const promise = fetch("https://jsonplaceholder.typicode.com/users");
+        // promise.then(function() {
+        //     console.log("Everything went well!");
+        //     console.log("Request completed...");
+        // });
+        // promise.catch(function() {
+        //     console.log("There was an error");
+        //     console.log("Check your network connection...");
+        // });
+
+        const url = "https://jsonplaceholder.typicode.com/users";
+
+        fetch(url).then(function(response) {
+            
+            response.json().then(function(result) {
+
+                console.log( result );
+
+            }).catch(function(error) {
+                console.log("ERROR!");
+                console.log(error);
+            });
+            
+
+        }).catch(function(error) {
+        
+            console.log("ERROR!");
+            console.log(error);
+
+        });
+
+
+    </script>
+</body>
+</html>
