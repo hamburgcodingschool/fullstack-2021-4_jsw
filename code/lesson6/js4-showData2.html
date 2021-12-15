@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #resultBox {
+            border: solid 2px black;
+            background-color: azure;
+            width: 400px;
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="resultBox">
+
+    </div>
+    <button id="fetchButton">Fetch Data</button>
+
+    <script>
+        async function fetchUserData() {
+            const url = "https://jsonplaceholder.typicode.com/users";
+
+            try {
+                const response = await fetch(url);
+                const result = await response.json();
+
+                fillBox(result);
+            } catch (error) {
+                console.log("ERROR!");
+                console.log(error);
+            }
+        }
+
+        function fillBox(userData) {
+            let list = "<ul>";
+
+            for (let i = 0; i < userData.length; i++) {
+                list += `<li>${userData[i].name}</li>`;
+            }
+            list += "</ul>";
+            
+            resultBox.innerHTML = list;
+        }
+
+        const fetchButton = document.querySelector("#fetchButton");
+        const resultBox = document.querySelector("#resultBox");
+        
+        fetchButton.addEventListener("click", function() {
+            resultBox.innerHTML = "Loading...";
+            fetchUserData();
+        });
+
+
+    </script>
+</body>
+</html>
