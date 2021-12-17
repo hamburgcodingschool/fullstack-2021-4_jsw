@@ -7,12 +7,14 @@
     const inputFilter = document.querySelector("#inputFilter");
 
     let result;
+    let filteredResult;
 
     // async closure so we can take advantage of the await syntax
     (async function() {
         const url = "https://jsonplaceholder.typicode.com/users";
         result = await fetchData(url);
-        listContent.innerHTML = createList(result);
+        
+        sortAndFilter();
     })();
 
     listContent.addEventListener("click", function(event) {
@@ -21,7 +23,7 @@
         }
 
         const index = event.target.dataset.index;
-        detailContent.innerHTML = createDetails(result[index]);
+        detailContent.innerHTML = createDetails(filteredResult[index]);
     });
 
     selectSort.addEventListener("change", function(event) {
@@ -34,7 +36,7 @@
 
     function sortAndFilter() {
         const searchTerm = inputFilter.value;
-        let filteredResult = filterByName(result, searchTerm);
+        filteredResult = filterByName(result, searchTerm);
         
         if (selectSort.value === "nameAsc") {
             filteredResult = sortByNameASC(filteredResult);
@@ -137,3 +139,19 @@ function filterByName(dataArray, searchTerm) {
     });
     return filteredResult;
 }
+
+// HOMEWORK
+// use the pokemon API to read a list of names of POKEMON
+// print the list in the left box
+// when clicking details show the details on the right box
+// including at least 1 image
+// 
+// Default is filtered to 20
+// https://pokeapi.co/api/v2/pokemon/
+//
+// List of all pokemon
+// https://pokeapi.co/api/v2/pokemon/?limit=1118
+//
+// Example of a detail URL
+// https://pokeapi.co/api/v2/pokemon/1/
+//
