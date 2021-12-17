@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <br>
+    <br>
+    <div>
+        <label>
+            Sort by:
+            <select id="selectSort">
+                <option value="nameAsc">Name ASC</option>
+                <option value="nameDesc">Name DESC</option>
+                <option value="userAsc">Username ASC</option>
+                <option value="userDesc">Username DESC</option>
+            </select>
+        </label>
+        <label>
+            Filter by:
+            <input id="inputFilter" type="text" placeholder="name">
+        </label>
+    </div>
+    <br>
+    <br>
+    <div id="listContent" class="contentBox">Loading...</div>
+    <div id="detailContent" class="contentBox"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
