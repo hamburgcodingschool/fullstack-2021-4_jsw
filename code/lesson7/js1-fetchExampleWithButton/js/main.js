@@ -1,24 +1,17 @@
 // closure will run as soon as the page loads
 (function () {
     
-    // const loadListButton = document.querySelector("#loadListButton");
+    const loadListButton = document.querySelector("#loadListButton");
     const listContent = document.querySelector("#listContent");
     const detailContent = document.querySelector("#detailContent");
 
     let result;
 
-    // loadListButton.addEventListener("click", async function() {
-    //     const url = "https://jsonplaceholder.typicode.com/users";
-    //     result = await fetchData(url);
-    //     listContent.innerHTML = createList(result);
-    // });
-
-    // async closure so we can take advantage of the await syntax
-    (async function() {
+    loadListButton.addEventListener("click", async function() {
         const url = "https://jsonplaceholder.typicode.com/users";
         result = await fetchData(url);
         listContent.innerHTML = createList(result);
-    })();
+    });
 
     listContent.addEventListener("click", function(event) {
         if (event.target.tagName !== "BUTTON") {

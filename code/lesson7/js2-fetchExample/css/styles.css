@@ -1,0 +1,23 @@
+body {
+  background-color: #ebebeb;
+}
+
+th {
+  text-align: left;
+}
+
+.contentBox {
+  border: solid 2px #333;
+  width: 450px;
+  min-height: 300px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#listContent {
+  float: left;
+}
+
+#detailContent {
+  float: left;
+}
