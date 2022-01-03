@@ -1,0 +1,11 @@
+body {
+  background-color: darksalmon;
+}
+
+#detailsLoading {
+  display: none;
+}
+
+#detailsContent {
+  display: none;
+}
