@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const people = [
+            {
+                name: "Martha",
+                age: 20
+            },
+            {
+                name: "Bob",
+                age: 25
+            },
+            {
+                name: "Bonnie",
+                age: 30
+            },
+        ];
+
+        // Convert my people Array into a JSON string.
+        const jsonSringOfPeople = JSON.stringify(people);
+
+        // Now save the string to localstorage, since localstorage only saves Strings
+        localStorage.setItem("myLocalPeople", jsonSringOfPeople);
+
+
+        
+    </script>
+</body>
+</html>
