@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            background-color: #FF0000;
+            width: 200px;
+            height: 200px;
+
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation: myAwesomeAnimation 2s ease 3s 4 normal forwards; */
+            animation: thereAndBackAgain 2s;
+        }
+
+        #div2 {
+            position: absolute;
+            top: 50px;
+            left: 0;
+
+            background-color: #00FF00;
+            width: 200px;
+            height: 200px;
+
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation: myAwesomeAnimation 2s ease 3s 4 normal forwards; */
+            
+        }
+
+        .thereAndBackAgainAnim {
+            animation: thereAndBackAgain 2s;
+        }
+
+        #div3 {
+            position: absolute;
+            top: 100px;
+            left: 0;
+
+            background-color: #0000FF;
+            width: 200px;
+            height: 200px;
+
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation: myAwesomeAnimation 2s ease 3s 4 normal forwards; */
+            animation: thereAndBackAgain 2s 1s;
+        }
+
+        @keyframes thereAndBackAgain {
+            
+            25% {
+                left: 200px;
+            }
+
+            50% {
+                left: -100px;
+            }
+
+            100% {
+                left: 0;
+            }
+
+        }
+
+        @keyframes myAwesomeAnimation {
+            
+            0% {
+                width: 200px;
+            }
+
+            50% {
+                background-color: yellow;
+            }
+
+            100% {
+                width: 400px;
+                background-color: yellow;
+            }
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+
+    <script>
+        const div2 = document.querySelector("#div2");
+        div2.addEventListener("click", function() {
+
+            div2.classList.add("thereAndBackAgainAnim");
+
+        });
+
+
+    </script>
+</body>
+</html>

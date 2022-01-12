@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CRUD</h1>
+    <p id="stateParag">[Insert New]</p>
+
+    <label>
+        Name:
+        <input type="text" id="inputName" placeholder="John Doe">
+    </label>
+    <br>
+    <label>
+        City:
+        <input type="text" id="inputCity" placeholder="Some city">
+    </label>
+    <br>
+    <button id="buttonSave">SAVE</button>
+
+    <div>
+        <ul id="listPeople">
+
+        </ul>
+    </div>
+
+    <script>
+        function loadPeopleFromLocalStorage() {
+            const jsonData = localStorage.getItem("people");
+            people = JSON.parse(jsonData);
+        }
+
+        function savePeopleToLocalStorage() {
+            const jsonData = JSON.stringify(people);
+            localStorage.setItem("people", jsonData);
+        }
+
+        function fillListPeople() {
+            let newContent = "";
+            people.forEach(function(person, index) {
+                newContent += "<li>";
+                newContent += `${person.name}, ${person.city}`;
+                newContent += `<button data-index="${index}" class="del">🗑</button>`;
+                newContent += `<button data-index="${index}" class="edit">✏️</button>`;
+                newContent += "</li>";
+            });
+            listPeople.innerHTML = newContent;
+        }
+
+        const stateParag = document.querySelector("#stateParag");
+        const inputName = document.querySelector("#inputName");
+        const inputCity = document.querySelector("#inputCity");        
+        const buttonSave = document.querySelector("#buttonSave");
+        const listPeople = document.querySelector("#listPeople");
+
+        buttonSave.addEventListener("click", function(event) {
+            const name = inputName.value || "Default person name";
+            const city = inputCity.value || "Default city";
+
+            const newPerson = {
+                "name": name,
+                "city": city
+            }
+
+            if (editIndex == -1) {
+                people.push(newPerson);
+            } else {
+                people[editIndex] = newPerson;
+            }
+            
+            savePeopleToLocalStorage();
+            fillListPeople();
+
+            inputName.value = "";
+            inputCity.value = "";
+
+            stateParag.innerHTML = "[Insert New]";
+            editIndex = -1;
+
+        });
+
+        listPeople.addEventListener("click", function(event) {
+            // if (event.target.tagName !== "BUTTON") {
+            //     return;
+            // }
+            // people.splice(event.target.dataset.index, 1);
+            // savePeopleToLocalStorage();
+            // fillListPeople();
+
+            if (event.target.classList.contains("del")) {
+                people.splice(event.target.dataset.index, 1);
+                savePeopleToLocalStorage();
+                fillListPeople();
+            }
+
+            if (event.target.classList.contains("edit")) {
+                const index = event.target.dataset.index;
+                inputName.value = people[index].name;
+                inputCity.value = people[index].city;
+
+                stateParag.innerHTML = "[EDIT]";
+                editIndex = index;
+            }
+        });
+          
+        let people = [];
+        let editIndex = -1;
+
+        loadPeopleFromLocalStorage();
+        fillListPeople();
+
+    </script>
+</body>
+</html>
